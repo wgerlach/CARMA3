@@ -1,4 +1,4 @@
-
+```text
   Copyright (C) 2010 CeBiTec, Bielefeld University
   Written by Wolfgang Gerlach.
 
@@ -15,33 +15,27 @@
   along with this file; see the file LICENSE.  If not, write to
   the Free Software Foundation, Inc., 59 Temple Place - Suite 330,
   Boston, MA 02111-1307, USA.
-
+```
 
 CARMA3
 ======
 
 This software is freely available at
+
 https://github.com/wgerlach/CARMA3
 
 
 
 If you use CARMA please cite:
+```text
 Wolfgang Gerlach, Jens Stoye
 Taxonomic classification of unassembled metagenomic reads with CARMA3
 Nucleic acids research 39 (14), e91-e91
-
-
-Content
-=======
-
-* Installation
-* Instructions for use
-
-
+```
 
 
 Installation
-============
+------------
 
 a)
 Requires parts of the Boost C++ Libraries
@@ -52,8 +46,8 @@ sudo apt-get install libboost-all-dev libbz2-dev zlib1g-dev
 ```
 
 manually:
-www.boost.org/
-Download and install the boost library if not already available on your system:
+
+Download and install the boost library (www.boost.org) if not already available on your system:
 ```bash
 wget http://downloads.sourceforge.net/project/boost/boost/1.51.0/boost_1_51_0.tar.gz
 tar xvfz boost_1_51_0.tar.gz
@@ -95,6 +89,7 @@ make
 c)
 Install BLAST (with the NR database) and/or HMMER (with Pfam database, see next step for details)
 CARMA3 has been developed to parse BLAST output produced with blastall-2.2.21 and blastall-2.2.24. We did not test other versions yet. 
+
 Unfortunately, CARMA3 does not yet work with BLAST+. Please use the legacy BLAST, version up to 2.2.26.
 ftp://ftp.ncbi.nlm.nih.gov/blast/executables/release/LATEST/
 
@@ -177,7 +172,7 @@ In this case add the following parameters to $native_options:
 
 
 Instructions for use
-====================
+--------------------
 
 CARMA3 can provide taxonomic classifcation with BLASTx(NR) and HMMER3(Pfam). Our evaluations have shown
 that taxonomic classification accuracy of the BLASTx-based variant is better than the HMMER-variant. Therefore 
