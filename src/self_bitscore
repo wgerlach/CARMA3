@@ -1,0 +1,61 @@
+carma_base.cpp:	recRes->match_type = matching_query->match_type;
+carma_base.cpp:	recRes->other_hits = new vector<pair<double, rank_t> * >();
+carma_base.cpp:	recRes->best_hit_taxid = match_hit->ncbi_tax_id;
+carma_base.cpp:	recRes->self_bitscore = 0;
+carma_base.cpp:	//recRes->self_bitscore = blast_hsp->bitscore;
+carma_base.cpp:	//recRes->query_bitscore = blast_hsp->bitscore;
+carma_base.cpp:			if (reciprocal_hsp->bitscore > recRes->self_bitscore) {
+carma_base.cpp:				recRes->self_bitscore = reciprocal_hsp->bitscore;
+carma_base.cpp:			recRes->other_hits->push_back(ppp);
+carma_base.cpp:		recRes->query_bitscore = blastp_excl_hsp->bitscore;
+carma_base.cpp:		recRes->query_bitscore = blast_hsp->bitscore;
+carma_base.cpp://	if (recRes != 0 && recRes->other_hits != 0) {
+carma_base.cpp://		cout << "#hits obtained in reciprocal search (without self & query): " << recRes->other_hits->size() << endl;
+carma_base.cpp:		//recRes->query_bitscore = recRes->query_bitscore - (frameshiftNum*1);
+carma_base.cpp:		//recRes->query_bitscore = recRes->query_bitscore - 1;
+carma_base.cpp:	recRes->best_hit_taxid = best_hit_taxid;
+carma_base.cpp:	if ((recRes == 0) || (recRes->other_hits == 0) || (recRes->query_bitscore == -1) || (recRes->self_bitscore == -1)) {
+carma_base.cpp://			cerr << "recRes->other_hits: " << recRes->other_hits << endl;
+carma_base.cpp://			cerr << "recRes->query_bitscore: " << recRes->query_bitscore << endl;
+carma_base.cpp://			cerr << "recRes->self_bitscore: " << recRes->self_bitscore << endl;
+carma_base.cpp://			for (recIt = recRes->other_hits->begin(); recIt != recRes->other_hits->end(); recIt++) {
+carma_base.cpp:	best_scores[0]=recRes->self_bitscore;
+carma_base.cpp:	worst_scores[0]=recRes->self_bitscore;
+carma_base.cpp:	if (recRes->self_bitscore <= 0) {
+carma_base.cpp:		cerr << "recRes->self_bitscore: " << recRes->self_bitscore << endl;
+carma_base.cpp:		cout << "#recRes->self_bitscore: " << recRes->self_bitscore << endl;
+carma_base.cpp:		cout << "#recRes->query_bitscore: " << recRes->query_bitscore << endl;
+carma_base.cpp:		double mul_result = recRes->query_bitscore * this->query_multiplier;
+carma_base.cpp:		recRes->query_bitscore = (mul_result<recRes->self_bitscore)?mul_result:recRes->self_bitscore;
+carma_base.cpp:			cout << "#multiplied query_bitscore: " << recRes->query_bitscore << endl;
+carma_base.cpp:	for (recIt = recRes->other_hits->begin(); recIt != recRes->other_hits->end(); recIt++) {
+carma_base.cpp://							cout << "recRes->self_bitscore: " << recRes->self_bitscore << endl;
+carma_base.cpp://							cout << "recRes->query_bitscore: " << recRes->query_bitscore << endl;
+carma_base.cpp:	while ( (recRes->query_bitscore > best_scores[simpleRank-1] ) && simpleRank > 0) {
+carma_base.cpp:		//		cerr << recRes->query_bitscore << endl;
+carma_base.cpp:		//		cerr << "recRes->query_bitscore >= best_scores[simpleRank] and i<0 !?" << endl;
+carma_base.cpp:		if ( recRes->query_bitscore > best_scores[simpleRank]  ) { // when we are better than the current interval.. (special case: unknown-level)
+carma_base.cpp://				if (recRes->query_bitscore == best_scores[simpleRank-1]) {
+carma_base.cpp://				} else if ((recRes->query_bitscore >= worst_scores[simpleRank-1]) && (worst_scores[simpleRank-1] > 0)) { // > 0 not needed anymore?
+carma_base.cpp:				//if ( recRes->query_bitscore >= worst_scores[simpleRank-1] && (worst_scores[simpleRank-1] > 0) ) { // > 0 not needed anymore?
+carma_base.cpp:				//cerr << "recRes->query_bitscore: " << recRes->query_bitscore << endl;
+carma_base.cpp:				if ( recRes->query_bitscore >= worst_scores[simpleRank-1] ) { // > 0 not needed anymore?
+carma_base.cpp:				//if ( recRes->query_bitscore >= worst_scores[simpleRank-1] ) { // > 0 not needed anymore?
+carma_base.cpp://cerr << "recRes->best_hit_taxid: " << recRes->best_hit_taxid<< endl;
+carma_base.cpp:	getTaxa(recRes->best_hit_taxid, &buffer_taxid, this->parent_taxid, NCBI_MAX);
+carma_base.cpp:		int match_type = recRes->match_type;
+carma_hmmer.cpp:		recRes->match_type = MATCH_TYPE_PFAM_HMM;
+carma_hmmer.cpp:		recRes->query_bitscore = best_score;
+carma_hmmer.cpp:		recRes->self_bitscore = computeBlosumScore(best_alignment->second, best_alignment->second, start_area, stop_area);
+carma_hmmer.cpp:		recRes->best_hit_taxid = best_taxid;
+carma_hmmer.cpp:		recRes->other_hits = new vector<pair<double, rank_t> * >();
+carma_hmmer.cpp:		if (recRes->self_bitscore < this->pairwise_blosum_minscore) { // should not happen
+carma_hmmer.cpp:					recRes->other_hits->push_back(ppp);
+carma_rna.cpp:		recRes->match_type = MATCH_TYPE_RDP;
+carma_rna.cpp:		recRes->query_bitscore = query_score;
+carma_rna.cpp:		recRes->self_bitscore = computePairwiseDNAScore(best_hit_alignment_sequence, best_hit_alignment_sequence, alignment_start, alignment_end);
+carma_rna.cpp:		//cerr << "recRes->self_bitscore: " << recRes->self_bitscore << endl;
+carma_rna.cpp:		recRes->best_hit_taxid = best_hit_alignment_sequence->taxid;
+carma_rna.cpp:		//cerr << "recRes->best_hit_taxid: " << recRes->best_hit_taxid << endl;
+carma_rna.cpp:		recRes->other_hits = new vector<pair<double, rank_t> * >();
+carma_rna.cpp:				recRes->other_hits->push_back(ppp);
